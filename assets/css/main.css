@@ -2850,8 +2850,7 @@ html {
   padding: 0 30px;
 }
 .filter__content {
-  max-height: calc(100vh - 560px);
-  overflow-y: auto;
+  max-height: calc(100vh - 315px);
 }
 @media (max-width: 1199.98px) {
   .filter__content {

@@ -9,5 +9,8 @@
         "minify": "sass sass/:assets/css/ -s compressed"
     },
     "author": "",
-    "license": "ISC"
+    "license": "ISC",
+    "dependencies": {
+        "sass": "^1.77.4"
+    }
 }
