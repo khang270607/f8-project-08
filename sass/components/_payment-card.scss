@@ -1,0 +1,112 @@
+.payment-card {
+    position: relative;
+    height: 100%;
+    padding: 20px;
+    color: #fff;
+    border-radius: 10px;
+    background: var(--bg-color);
+    overflow: hidden;
+    z-index: 0;
+    user-select: none;
+
+    &__img {
+        position: absolute;
+        top: 0;
+        right: 30px;
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    &__top {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    &__type {
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 142.857%;
+    }
+
+    &__number {
+        margin-top: 37px;
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 144.444%;
+    }
+
+    &__bottom {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__expried {
+        margin: 0 auto 0 40px;
+    }
+
+    &__label {
+        font-size: 0.8rem;
+        font-weight: 500;
+        line-height: 175%;
+    }
+
+    &__value {
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 140%;
+    }
+
+    &__circle {
+        --circle-size: 28px;
+
+        position: relative;
+        width: 42px;
+        height: var(--circle-size);
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            width: var(--circle-size);
+            height: var(--circle-size);
+            border-radius: 50%;
+            top: 0;
+        }
+
+        &::before {
+            left: 0;
+            z-index: 1;
+            background-color: #f94545;
+            mix-blend-mode: hard-light;
+        }
+
+        &::after {
+            right: 0;
+            background-color: #ffb700;
+        }
+    }
+}
+
+.new-card {
+    min-height: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    border-radius: 10px;
+    border: 1px dashed var(--new-card-text-color);
+
+    &__icon {
+        filter: var(--profile-icon-color);
+    }
+
+    &__text {
+        color: var(--new-card-text-color);
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 142.857%;
+    }
+}

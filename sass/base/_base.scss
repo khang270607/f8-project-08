@@ -1,0 +1,134 @@
+@use "../abstracts";
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+// html,
+// body {
+//     overflow: overlay;
+// }
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: Lato, sans-serif;
+    color: var(--text-color);
+    // height: 10000px;
+    background: var(--body-bg);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+a,
+img,
+button,
+input,
+label,
+textarea,
+select {
+    font-family: inherit;
+    color: inherit;
+    outline: none;
+    border: none;
+    padding: 0;
+}
+
+.icon {
+    filter: var(--icon-color);
+}
+
+input,
+textarea {
+    background: transparent;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+input:-webkit-autofill:hover {
+    transition: background-color 1s 99999s;
+    -webkit-text-fill-color: var(--text-color) !important;
+    caret-color: var(--text-color);
+}
+
+@include abstracts.screen(sm) {
+    .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}
+
+i,
+em {
+    font-style: italic;
+}
+
+b,
+strong {
+    font-weight: 600;
+}
+
+.separate {
+    margin: var(--margin) 0;
+    height: 1px;
+    background: var(--separate-color);
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar {
+    border-radius: 0;
+    width: 2px;
+    height: 3px;
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: var(--menu-scrollbar);
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: var(--srcollbar-bg);
+}
+
+// @include abstracts.screen(lg) {
+//     ::-webkit-scrollbar,
+//     ::-webkit-scrollbar {
+//         border-radius: 0;
+//         width: 2px;
+//         height: 2px;
+//     }
+
+//     ::-webkit-scrollbar-thumb,
+//     ::-webkit-scrollbar-thumb {
+//         border-radius: 4px;
+//         background-color: var(--menu-scrollbar);
+//     }
+
+//     ::-webkit-scrollbar-track,
+//     ::-webkit-scrollbar-track {
+//         border-radius: 0;
+//         background-color: var(--srcollbar-bg);
+//     }
+// }

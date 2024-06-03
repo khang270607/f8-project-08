@@ -1,0 +1,211 @@
+@use "../abstracts";
+
+.filter-wrap {
+    position: relative;
+    z-index: 1;
+}
+
+.filter {
+    position: absolute;
+    right: 0;
+    top: 55px;
+
+    padding: 30px 0;
+    border-radius: 20px;
+    // height: auto;
+
+    background: var(--filter-form-bg);
+    filter: drop-shadow(0px 40px 90px var(--filter-form-drop-shadow));
+
+    transition: opacity, visibility;
+    transition-duration: 0.5s;
+    &.hide {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    @include abstracts.screen(sm) {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        inset: 0;
+        border-radius: 0;
+    }
+
+    &__heading {
+        color: var(--filter-form-text-color);
+        font-size: 2.2rem;
+        font-weight: 500;
+        line-height: 1.46;
+    }
+
+    &__form {
+        margin-top: 30px;
+
+        &-group {
+            margin-top: 20px;
+
+            &--inline {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+        }
+
+        &-slider {
+            width: 100%;
+            height: 2px;
+            background: #d2d1d6;
+            position: relative;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                translate: 0 -50%;
+                width: 22px;
+                height: 22px;
+                border-radius: 50%;
+                background: var(--filter-form-bg);
+                border: 6px solid #ffb700;
+            }
+
+            &::before {
+                left: var(--min-value);
+            }
+
+            &::after {
+                left: var(--max-value);
+            }
+        }
+
+        &-text-input--small &-input {
+            font-size: 1.4rem;
+        }
+
+        &-text-input {
+            border-radius: 6px;
+            border: 1px solid #d2d1d6;
+        }
+        &-input {
+            width: 100%;
+
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 1.47;
+
+            &::placeholder {
+                color: #9e9da8;
+                font-weight: 400;
+            }
+
+            @include abstracts.screen(sm) {
+                font-size: 1.6rem !important;
+            }
+
+            &-icon {
+                margin-left: 12px;
+            }
+        }
+
+        &-text-input {
+            display: flex;
+            align-items: center;
+
+            width: 334px;
+            height: 44px;
+            padding: 0 16px;
+
+            overflow: hidden;
+
+            @include abstracts.screen(sm) {
+                width: 100%;
+            }
+            &--small {
+                width: 121px;
+                height: 36px;
+                padding: 0 12px;
+                font-size: 1.4rem;
+                line-height: 1.42;
+
+                @include abstracts.screen(xl) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    // end form
+
+    &__row {
+        display: flex;
+    }
+
+    &__separate {
+        width: 1px;
+        margin: 0 30px;
+        background: #eee;
+
+        @include abstracts.screen(xl) {
+            width: 100%;
+            min-height: 1px;
+            margin: 30px 0;
+        }
+    }
+
+    &__fotter {
+        display: flex;
+        justify-content: end;
+        margin-top: 32px;
+        background: var(--filter-form-fotter-bg);
+
+        @include abstracts.screen(sm) {
+            position: sticky;
+            bottom: 0;
+        }
+    }
+
+    &__cancel,
+    &__submit {
+        height: 38px;
+        padding: 0 10px;
+        @include abstracts.screen(sm) {
+            flex: 1;
+            height: 42px;
+        }
+    }
+
+    &__cancel {
+        font-size: 1.5rem;
+    }
+
+    &__submit {
+        font-size: 1.4rem;
+    }
+
+    &__arrow {
+        position: absolute;
+        top: -13px;
+        right: 20px;
+        height: 17.75px;
+        filter: var(--filter-form-arrow-up);
+    }
+
+    &__heading,
+    &__content,
+    &__fotter {
+        padding: 0 30px;
+    }
+
+    &__content {
+        max-height: calc(100vh - 315px);
+        @include abstracts.screen(xl) {
+            overscroll-behavior: contain;
+            flex-direction: column;
+        }
+        @include abstracts.screen(sm) {
+            max-height: calc(100vh - 270px);
+            padding-bottom: 60px;
+        }
+    }
+}
