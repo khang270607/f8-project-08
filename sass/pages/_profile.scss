@@ -1,105 +1,105 @@
 .profile {
-    &-container {
-        margin-top: 30px;
-        color: var(--profile-user-color);
+  &-container {
+    margin-top: 30px;
+    color: var(--profile-user-color);
+  }
+
+  &__sidebar {
+    border-radius: 20px;
+    background: var(--profile-sidebar-bg);
+    box-shadow: 0px 20px 60px 10px var(--profile-sidebar-shadow);
+    overflow: hidden;
+    padding-bottom: 30px;
+  }
+
+  // User
+
+  &-user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 45px 0 20px 0;
+    color: #fff;
+    background: linear-gradient(180deg, rgba(26, 22, 46, 0) 0%, #1a162e 100%),
+      url(../img/profile/cover.png) no-repeat center / cover;
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: 0px 20px 60px 10px var(--profile-shadow);
+    &__avatar {
+      width: 121px;
+      height: 121px;
+      // clip-path: circle(50% at 50% 50%);
+      border-radius: 50%;
+      object-fit: cover;
+      border-radius: 116px;
+      border: 5px solid rgba(255, 255, 255, 0.2);
+      background: #ccc content-box;
+      box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
     }
 
-    &__sidebar {
-        border-radius: 20px;
-        background: var(--profile-sidebar-bg);
-        box-shadow: 0px 20px 60px 10px var(--profile-sidebar-shadow);
-        overflow: hidden;
-        padding-bottom: 30px;
-    }
-
-    // User
-
-    &-user {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        padding: 45px 0 20px 0;
-        color: #fff;
-        background: linear-gradient(180deg, rgba(26, 22, 46, 0) 0%, #1a162e 100%),
-            url(../img/profile/cover.png) no-repeat center / cover;
-        border-radius: 20px 20px 0px 0px;
-        box-shadow: 0px 20px 60px 10px var(--profile-shadow);
-        &__avatar {
-            width: 121px;
-            height: 121px;
-            // clip-path: circle(50% at 50% 50%);
-            border-radius: 50%;
-            object-fit: cover;
-            border-radius: 116px;
-            border: 5px solid rgba(255, 255, 255, 0.2);
-            background: #ccc content-box;
-            box-shadow: 0px 4px 14px 2px rgba(0, 0, 0, 0.08);
-        }
-
-        &__name {
-            margin-top: 15px;
-            font-size: 1.8rem;
-            font-weight: 700;
-            line-height: 144.444%;
-        }
-
-        &__desc {
-            margin-top: 2px;
-            font-size: 1.5rem;
-            font-weight: 500;
-            line-height: 146.667%;
-        }
-    }
-
-    &-menu {
-        margin-top: 30px;
-        padding: 0 30px;
-
-        &__title {
-            font-size: 1.8rem;
-            font-weight: 500;
-            line-height: 144.444%;
-        }
-
-        &__list {
-            margin-top: 11px;
-        }
-
-        &__link {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            height: 32px;
-            border-radius: 5px;
-            padding: 0 4px;
-
-            font-size: 1.5rem;
-            line-height: 146.667%;
-
-            transition: background-color 0.3s;
-
-            &:hover {
-                background: var(--profile-user-avatar-hover-bg);
-            }
-        }
-
-        &__icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 100%;
-
-            &-info {
-                filter: var(--profile-menu-icon-filter);
-            }
-        }
+    &__name {
+      margin-top: 15px;
+      font-size: 1.8rem;
+      font-weight: 700;
+      line-height: 144.444%;
     }
 
     &__desc {
-        margin-bottom: 16px;
+      margin-top: 2px;
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 146.667%;
     }
+  }
+
+  &-menu {
+    margin-top: 30px;
+    padding: 0 30px;
+
+    &__title {
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 144.444%;
+    }
+
+    &__list {
+      margin-top: 11px;
+    }
+
+    &__link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      height: 32px;
+      border-radius: 5px;
+      padding: 0 4px;
+
+      font-size: 1.5rem;
+      line-height: 146.667%;
+
+      transition: background-color 0.3s;
+
+      &:hover {
+        background: var(--profile-user-link);
+      }
+    }
+
+    &__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 100%;
+
+      &-info {
+        filter: var(--profile-menu-icon-filter);
+      }
+    }
+  }
+
+  &__desc {
+    margin-bottom: 16px;
+  }
 }
 // end profile
